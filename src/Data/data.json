@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "L'Amérique pleure",
+    "artiste": "Les Cowboys Fringants",
+    "album": "Les antipodes",
+    "duration": "4:43",
+    "cover": "./images/cover1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Blinding Lights",
+    "artiste": "The Weeknd",
+    "album": "After Hours",
+    "duration": "3:20",
+    "cover": "./images/cover2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Shape of You",
+    "artiste": "Ed Sheeran",
+    "album": "Divide",
+    "duration": "4:24",
+    "cover": "./images/cover3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Someone Like You",
+    "artiste": "Adele",
+    "album": "21",
+    "duration": "4:45",
+    "cover": "./images/cover4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Believer",
+    "artiste": "Imagine Dragons",
+    "album": "Evolve",
+    "duration": "3:24",
+    "cover": "./images/cover5.jpg"
+  }
+]
