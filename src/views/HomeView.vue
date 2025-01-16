@@ -6,7 +6,7 @@ import data from '../Data/data.json';
 
 <template>
   <main>
-    <div class="flex flex-wrap space-x-8 p-5 overflow-hidden h-full w-full">
+    <div class="flex flex-wrap w-full h-full p-5 overflow-hidden gap-x-8 gap-y-2">
       <MusicCard
         :id="music.id"
         :name="music.name"
@@ -14,6 +14,7 @@ import data from '../Data/data.json';
         :album="music.album"
         :duration="music.duration"
         :cover="music.cover"
+        :mp3="music.mp3"
         v-for="music in data"
         :key="music.id"
       />

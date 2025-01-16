@@ -5,7 +5,8 @@
     "artiste": "Les Cowboys Fringants",
     "album": "Les antipodes",
     "duration": "4:43",
-    "cover": "./images/cover1.jpg"
+    "cover": "./images/cover1.jpg",
+    "mp3": "./music/mp3_1.mp3"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "artiste": "The Weeknd",
     "album": "After Hours",
     "duration": "3:20",
-    "cover": "./images/cover2.jpg"
+    "cover": "./images/cover2.jpg",
+    "mp3": "./music/mp3_2.mp3"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "artiste": "Ed Sheeran",
     "album": "Divide",
     "duration": "4:24",
-    "cover": "./images/cover3.jpg"
+    "cover": "./images/cover3.jpg",
+    "mp3": "./music/mp3_3.mp3"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "artiste": "Adele",
     "album": "21",
     "duration": "4:45",
-    "cover": "./images/cover4.jpg"
+    "cover": "./images/cover4.jpg",
+    "mp3": "./music/mp3_4.mp3"
   },
   {
     "id": 5,
@@ -37,6 +41,7 @@
     "artiste": "Imagine Dragons",
     "album": "Evolve",
     "duration": "3:24",
-    "cover": "./images/cover5.jpg"
+    "cover": "./images/cover5.jpg",
+    "mp3": "./music/mp3_5.mp3"
   }
 ]
