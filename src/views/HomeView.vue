@@ -1,36 +1,38 @@
 <script setup lang="ts">
 import MusicCard from '@/components/MusicCard.vue';
-import { provide, ref } from 'vue';
-import data from '../Data/data.json';
+import Player from '@/components/Player.vue';
+import data from '@/Data/data.json';
+import { ref } from 'vue';
 
-const currentTrack = ref('');
-
-function setCurrentTrack(mp3: string) {
-  currentTrack.value = mp3;
+export interface Track {
+  id: number;
+  name: string;
+  artiste: string;
+  album?: string;
+  cover: string;
+  mp3: string;
 }
 
-provide('setCurrentTrack', setCurrentTrack);
+const tracks = ref<Track[]>(data as Track[]);
+const playerRef = ref();
+
+console.log(tracks.value);
 </script>
 
 <template>
-  <main>
-    <div class="flex flex-wrap p-5 overflow-hidden gap-x-8 gap-y-2">
+  <div class="min-h-screen bg-[#141414] text-white">
+    <div class="grid grid-cols-4 gap-6 px-8 py-8">
       <MusicCard
-        v-for="music in data"
-        :key="music.id"
-        :id="music.id"
-        :name="music.name"
-        :artiste="music.artiste"
-        :album="music.album"
-        :cover="music.cover"
-        :mp3="music.mp3"
+        v-for="(track, index) in tracks"
+        :key="track.id"
+        :track="track"
+        :variant="'compact'"
+        @click="playerRef.playTrack(index)"
       />
     </div>
 
-    <div class="fixed bottom-0 w-full bg-[#1e2123] p-5">
-      <audio :src="currentTrack" controls v-if="currentTrack">
-        Votre navigateur ne supporte pas l'élément <code>audio</code>.
-      </audio>
+    <div class="fixed bottom-0 left-0 w-full">
+      <Player :tracks="tracks" ref="playerRef" />
     </div>
-  </main>
+  </div>
 </template>
