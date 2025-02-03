@@ -8,11 +8,11 @@ const tracks = ref<Track[]>(data as Track[]);
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#141414] text-white">
+  <div class="min-h-screen bg-[#141414] text-white w-full">
     <div class="my-4 ml-12">
-      <h1 class="text-3xl font-semibold">Ma collection</h1>
+      <h1 class="text-xl font-semibold">Ma collection</h1>
     </div>
-    <div class="grid grid-cols-4 gap-6 px-8 pt-8 pb-16">
+    <div class="flex flex-wrap w-full gap-6 px-8 pt-8 pb-16">
       <MusicCard
         v-for="(track, index) in tracks"
         :key="track.id"

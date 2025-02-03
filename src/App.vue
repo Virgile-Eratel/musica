@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import data from '@/Data/data.json';
-import { computed, ref } from 'vue';
 import { RouterView } from 'vue-router';
 import Player from './components/Player.vue';
 import Sidebar from './components/Sidebar.vue';
-import { useQueueStore } from './stores/query';
 
 export interface Track {
   id: number;
@@ -23,7 +20,6 @@ export interface Track {
     </div>
     <RouterView class="pl-10" />
     <div class="fixed bottom-0 left-0 w-full">
-      <!-- Utiliser Pinia pour faire un store et stocker les musiques a afficher  -->
       <Player />
     </div>
   </div>

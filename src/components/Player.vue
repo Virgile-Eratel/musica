@@ -155,7 +155,7 @@ function formatTime(time: number) {
     <div class="flex items-center justify-end w-1/4 gap-2">
       <i v-if="volume === 0" class="text-2xl bi bi-volume-mute-fill" />
       <i v-if="volume > 0.01 && volume < 0.5" class="text-2xl bi bi-volume-down-fill" />
-      <i v-if="volume > 0.5 && volume <= 1" class="text-2xl bi bi-volume-up-fill" />
+      <i v-if="volume >= 0.5 && volume <= 1" class="text-2xl bi bi-volume-up-fill" />
       <input
         type="range"
         class="w-24 player-range"

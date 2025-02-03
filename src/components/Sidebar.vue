@@ -1,11 +1,23 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const router = useRouter();
+const route = useRoute();
 
-function navigateTo(route: string) {
-  router.push(route);
+function navigateTo(target: string) {
+  router.push(target);
 }
+
+function isActive(target: string) {
+  return route.path === target;
+}
+
+const homeIconClass = computed(() => (isActive('/') ? 'text-[#FACD66]' : 'text-white'));
+const libraryIconClass = computed(() => (isActive('/library') ? 'text-[#FACD66]' : 'text-white'));
+const PlaylistIconClass = computed(() =>
+  isActive('/playlists') ? 'text-[#FACD66]' : 'text-white',
+);
 </script>
 
 <template>
@@ -14,28 +26,35 @@ function navigateTo(route: string) {
       <i
         title="Accueil"
         @click="navigateTo('/')"
-        class="text-4xl cursor-pointer bi bi-music-note-beamed"
+        class="text-4xl text-white cursor-pointer bi bi-music-note-beamed"
       />
+
       <div
         class="flex flex-col items-center justify-center px-4 py-8 space-y-10 bg-black rounded-full"
       >
         <i
           title="Accueil"
           @click="navigateTo('/')"
-          class="text-2xl cursor-pointer bi bi-house-door-fill"
+          :class="['text-2xl cursor-pointer bi bi-house-door-fill', homeIconClass]"
         />
         <i
           title="Librairie"
           @click="navigateTo('/library')"
-          class="text-2xl cursor-pointer bi bi-music-note-list"
+          :class="['text-2xl cursor-pointer bi bi-music-note-list', libraryIconClass]"
         />
-        <i class="text-2xl bi bi-boombox-fill" />
+
+        <i
+          title="Playlists"
+          :class="['text-2xl cursor-pointer bi bi-boombox-fill', PlaylistIconClass]"
+          @click="navigateTo('/playlists')"
+        />
       </div>
+
       <div
         class="flex flex-col items-center justify-center px-4 py-8 space-y-10 bg-black rounded-full"
       >
-        <i class="text-2xl bi bi-person-fill" />
-        <i class="text-2xl bi bi-box-arrow-right" />
+        <i class="text-2xl text-white bi bi-person-fill" />
+        <i class="text-2xl text-white bi bi-box-arrow-right" />
       </div>
     </div>
   </div>
