@@ -1,56 +1,59 @@
 <script setup lang="ts">
-import type { Track } from '@/views/HomeView.vue';
-import { onMounted, onUnmounted, ref } from 'vue';
+import type { Track } from '@/App.vue';
+import { useQueueStore } from '@/stores/query';
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 
-interface PlayerProps {
-  tracks: Track[];
-}
+const queueStore = useQueueStore();
 
-const props = defineProps<PlayerProps>();
+const currentTrack = computed<Track | null>(() => queueStore.currentTrack);
 
-// État interne du lecteur
-const currentTrackIndex = ref<number>(0);
-const isPlaying = ref<boolean>(false);
-const currentTime = ref<number>(0);
-const duration = ref<number>(0);
-const volume = ref<number>(1);
+const isPlaying = ref(false);
+const currentTime = ref(0);
+const duration = ref(0);
+const volume = ref(1);
 
-// Élément audio
 let audioElement: HTMLAudioElement | null = null;
 
-// Lifecycle
-onMounted(() => {
-  audioElement = new Audio(props.tracks[currentTrackIndex.value].mp3);
+function setupAudio() {
+  if (!currentTrack.value) return;
+  audioElement = new Audio(currentTrack.value.mp3);
   audioElement.volume = volume.value;
-
-  // Gestion des événements
   audioElement.addEventListener('timeupdate', handleTimeUpdate);
   audioElement.addEventListener('ended', handleNextTrack);
+  if (isPlaying.value) {
+    audioElement.play();
+  }
+}
+
+function cleanupAudio() {
+  if (audioElement) {
+    audioElement.pause();
+    audioElement.removeEventListener('timeupdate', handleTimeUpdate);
+    audioElement.removeEventListener('ended', handleNextTrack);
+    audioElement = null;
+  }
+}
+
+onMounted(() => {
+  setupAudio();
 });
 
 onUnmounted(() => {
-  // Nettoyer les écouteurs d'événements
-  audioElement?.removeEventListener('timeupdate', handleTimeUpdate);
-  audioElement?.removeEventListener('ended', handleNextTrack);
+  cleanupAudio();
 });
 
-// Méthodes principales
-function playTrack(index: number) {
-  if (!audioElement) return;
-
-  // Mettre à jour la piste actuelle
-  currentTrackIndex.value = index;
-
-  // Configurer la source audio
-  audioElement.src = props.tracks[index].mp3;
-  audioElement.currentTime = 0;
-  audioElement.play();
-  isPlaying.value = true;
-}
+// watch changements de musique dans le store
+watch(currentTrack, (newTrack, oldTrack) => {
+  cleanupAudio();
+  setupAudio();
+  if (newTrack) {
+    audioElement?.play();
+    isPlaying.value = true;
+  }
+});
 
 function togglePlay() {
   if (!audioElement) return;
-
   if (audioElement.paused) {
     audioElement.play();
     isPlaying.value = true;
@@ -61,13 +64,11 @@ function togglePlay() {
 }
 
 function handleNextTrack() {
-  const nextIndex = (currentTrackIndex.value + 1) % props.tracks.length;
-  playTrack(nextIndex);
+  queueStore.playNext();
 }
 
 function handlePrevTrack() {
-  const prevIndex = (currentTrackIndex.value + props.tracks.length - 1) % props.tracks.length;
-  playTrack(prevIndex);
+  queueStore.playPrevious();
 }
 
 function handleTimeUpdate() {
@@ -100,29 +101,19 @@ function formatTime(time: number) {
     .padStart(2, '0');
   return `${minutes}:${seconds}`;
 }
-
-// Exposez les méthodes pour que le parent puisse y accéder
-defineExpose({
-  playTrack,
-  handleNextTrack,
-});
 </script>
 
 <template>
-  <div class="w-full h-20 bg-[#1e1e1e] flex items-center px-6 shadow-md z-50">
-    <!-- Piste actuelle -->
+  <div class="w-full h-[2px] backdrop-blur-xl"></div>
+  <div class="z-50 flex items-center w-full h-20 px-6 shadow-lg backdrop-blur-lg shadow-black/50">
     <div class="flex items-center w-1/4 min-w-[200px]">
-      <img
-        :src="props.tracks[currentTrackIndex].cover"
-        alt="cover"
-        class="object-cover mr-3 rounded-md w-14 h-14"
-      />
+      <img :src="currentTrack?.cover" alt="cover" class="object-cover mr-3 rounded-md w-14 h-14" />
       <div class="flex flex-col">
         <span class="text-sm font-semibold">
-          {{ props.tracks[currentTrackIndex].name }}
+          {{ currentTrack?.name }}
         </span>
         <span class="text-xs text-gray-400">
-          {{ props.tracks[currentTrackIndex].artiste }}
+          {{ currentTrack?.artiste }}
         </span>
       </div>
     </div>
@@ -132,12 +123,10 @@ defineExpose({
       <button @click="handlePrevTrack" class="hover:text-yellow-400">
         <i class="text-2xl bi bi-chevron-left" />
       </button>
-
       <button @click="togglePlay" class="hover:text-yellow-400">
         <i v-if="!isPlaying" class="text-2xl bi bi-play-fill" />
         <i v-else class="text-2xl bi bi-pause" />
       </button>
-
       <button @click="handleNextTrack" class="hover:text-yellow-400">
         <i class="text-2xl bi bi-chevron-right" />
       </button>
