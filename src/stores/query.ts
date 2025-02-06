@@ -22,7 +22,7 @@ export const useQueueStore = defineStore('queue', {
       this.currentIndex = this.queue.findIndex((t) => t.id === firstTrack.id);
     },
     playNow(track: Track) {
-      // musique en cours, return
+      // musique en cours, on fait r
       if (this.queue.length > 0 && this.queue[0].id === track.id) {
         return;
       }
@@ -34,7 +34,7 @@ export const useQueueStore = defineStore('queue', {
         this.queue.shift();
       }
 
-      // Ajoute le nouveau titre en tête de la file.
+      // Ajoute le nouveau titre en premier
       this.queue.unshift(track);
 
       this.currentIndex = 0;

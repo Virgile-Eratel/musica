@@ -1,23 +1,16 @@
 <script setup lang="ts">
-import type { Track } from '@/App.vue';
+import type { PlaylistType, Track } from '@/App.vue';
 import MusicCard from '@/components/MusicCard.vue';
 import Playlist from '@/components/Playlist.vue';
 import PlaylistCard from '@/components/PlaylistCard.vue';
 import data from '@/Data/data.json';
+import dataPlaylists from '@/Data/dataPlaylists.json';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 const tracks = ref<Track[]>(data as Track[]);
 
-const playlists = [
-  {
-    id: 1,
-    title: 'Tondeuse à gazon',
-    cover: '/public/images/coverPlaylist1.jpg',
-    description: 'Tracteur tondeuse super efficace quand tu tond, tu tond, tu tond... Bim Bam Boum',
-    tracksId: [1, 2, 3],
-  },
-];
+const playlists = dataPlaylists as PlaylistType[];
 
 const route = useRoute();
 const idPlaylist = Number(route.params.id);

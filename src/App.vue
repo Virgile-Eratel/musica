@@ -11,6 +11,13 @@ export interface Track {
   cover: string;
   mp3: string;
 }
+export interface PlaylistType {
+  id: number;
+  title: string;
+  cover: string;
+  description: string;
+  tracksId: number[];
+}
 </script>
 
 <template>

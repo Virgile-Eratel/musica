@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import type { Track } from '@/App.vue';
+import type { PlaylistType, Track } from '@/App.vue';
 import MusicCard from '@/components/MusicCard.vue';
 import PlaylistCard from '@/components/PlaylistCard.vue';
 import data from '@/Data/data.json';
+import dataPlaylists from '@/Data/dataPlaylists.json';
 import { useQueueStore } from '@/stores/query';
 import { ref } from 'vue';
 
 const tracks = ref<Track[]>(data as Track[]);
+const playlists = dataPlaylists as PlaylistType[];
 
 const queueStore = useQueueStore();
 </script>
@@ -21,12 +23,7 @@ const queueStore = useQueueStore();
         <div class="w-full h-full space-y-3 overflow-y-auto">
           <h1 class="text-xl font-semibold">Top charts</h1>
 
-          <PlaylistCard
-            :id="1"
-            title="Ma Playlist"
-            cover="/public/images/coverPlaylist1.jpg"
-            :variant="'line'"
-          />
+          <PlaylistCard :playlist="playlists[0]" :variant="'line'" />
         </div>
       </div>
       <h1 class="mt-6 mb-1 text-xl font-semibold">New releases.</h1>

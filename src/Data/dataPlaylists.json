@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Tondeuse à gazon",
+    "cover": "/images/coverPlaylist1.jpg",
+    "description": "Tracteur tondeuse super efficace quand tu tond, tu tond, tu tond... Bim Bam Boum",
+    "tracksId": [1, 2, 3]
+  },
+  {
+    "id": 2,
+    "title": "Tags sur la chevrotine",
+    "cover": "/images/coverPlaylist2.webp",
+    "description": "Zinzinerie de tags sur la chevrotine, wazzzzzzza",
+    "tracksId": [7, 8, 9, 5, 10]
+  }
+]
