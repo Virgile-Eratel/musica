@@ -13,8 +13,8 @@ export const useQueueStore = defineStore('queue', {
     },
   },
   actions: {
-    setQueue(tracks: Track[]) {
-      this.queue = tracks;
+    playPlaylist(playlist: Track[]) {
+      this.queue = playlist;
       this.currentIndex = 0;
     },
     playNow(track: Track) {

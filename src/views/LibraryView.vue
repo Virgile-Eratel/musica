@@ -2,6 +2,7 @@
 import type { Track } from '@/App.vue';
 import MusicCard from '@/components/MusicCard.vue';
 import data from '@/Data/data.json';
+import { useQueueStore } from '@/stores/query';
 import { computed, ref, watch } from 'vue';
 
 const tracks = ref<Track[]>(data as Track[]);
@@ -10,6 +11,7 @@ const selectedTab = ref<'all' | 'liked'>('all');
 
 const likedTracks = ref<Track[]>([]);
 
+const queueStore = useQueueStore();
 function updateLikedTracks() {
   likedTracks.value = tracks.value.filter(
     (track) => localStorage.getItem(`liked_${track.id}`) === 'true',
@@ -69,6 +71,10 @@ function selectTab(tab: 'all' | 'liked') {
 
     <div class="flex flex-wrap w-full gap-6 px-8 pt-8 pb-16">
       <MusicCard
+        @click="
+          queueStore.playPlaylist(displayedTracks);
+          queueStore.playNow(track);
+        "
         v-for="track in displayedTracks"
         :key="track.id"
         :track="track"

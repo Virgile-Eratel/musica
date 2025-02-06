@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Track } from '@/App.vue';
+import { useQueueStore } from '@/stores/query';
 import { defineProps } from 'vue';
 import MusicCard from './MusicCard.vue';
 
@@ -11,6 +12,12 @@ interface PlaylistProps {
 }
 
 const props = defineProps<PlaylistProps>();
+
+const queueStore = useQueueStore();
+
+function playPlaylist() {
+  queueStore.playPlaylist(props.tracks);
+}
 </script>
 
 <template>
@@ -36,6 +43,12 @@ const props = defineProps<PlaylistProps>();
           <p class="text-gray-300">{{ props.description }}</p>
           <p class="text-gray-300">{{ props.tracks.length }} musiques</p>
         </div>
+        <button
+          @click="playPlaylist"
+          class="p-4 bg-[#FACD66] rounded-full hover:bg-[#FACD90] focus:outline-none"
+        >
+          <i class="text-3xl text-white bi bi-play-fill"></i>
+        </button>
       </div>
       <div class="w-full pt-10 space-y-4">
         <MusicCard
