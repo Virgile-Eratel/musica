@@ -4,119 +4,119 @@
     "name": "L'Amérique pleure",
     "artiste": "Les Cowboys Fringants",
     "album": "Les antipodes",
-    "cover": "/public/images/cover1.jpg",
-    "mp3": "/public/music/mp3_1.mp3"
+    "cover": "/images/cover1.jpg",
+    "mp3": "/music/mp3_1.mp3"
   },
   {
     "id": 2,
     "name": "Blinding Lights",
     "artiste": "The Weeknd",
     "album": "After Hours",
-    "cover": "/public/images/cover2.jpg",
-    "mp3": "/public/music/mp3_2.mp3"
+    "cover": "/images/cover2.jpg",
+    "mp3": "/music/mp3_2.mp3"
   },
   {
     "id": 3,
     "name": "Shape of You",
     "artiste": "Ed Sheeran",
     "album": "Divide",
-    "cover": "/public/images/cover3.jpg",
-    "mp3": "/public/music/mp3_3.mp3"
+    "cover": "/images/cover3.jpg",
+    "mp3": "/music/mp3_3.mp3"
   },
   {
     "id": 4,
     "name": "Someone Like You",
     "artiste": "Adele",
     "album": "21",
-    "cover": "/public/images/cover4.jpg",
-    "mp3": "/public/music/mp3_4.mp3"
+    "cover": "/images/cover4.jpg",
+    "mp3": "/music/mp3_4.mp3"
   },
   {
     "id": 5,
     "name": "Believer",
     "artiste": "Imagine Dragons",
     "album": "Evolve",
-    "cover": "/public/images/cover5.jpg",
-    "mp3": "/public/music/mp3_5.mp3"
+    "cover": "/images/cover5.jpg",
+    "mp3": "/music/mp3_5.mp3"
   },
   {
     "id": 6,
     "name": "L'Amérique pleure",
     "artiste": "Les Cowboys Fringants",
     "album": "Les antipodes",
-    "cover": "/public/images/cover1.jpg",
-    "mp3": "/public/music/mp3_1.mp3"
+    "cover": "/images/cover1.jpg",
+    "mp3": "/music/mp3_1.mp3"
   },
   {
     "id": 7,
     "name": "Blinding Lights",
     "artiste": "The Weeknd",
     "album": "After Hours",
-    "cover": "/public/images/cover2.jpg",
-    "mp3": "/public/music/mp3_2.mp3"
+    "cover": "/images/cover2.jpg",
+    "mp3": "/music/mp3_2.mp3"
   },
   {
     "id": 8,
     "name": "Shape of You",
     "artiste": "Ed Sheeran",
     "album": "Divide",
-    "cover": "/public/images/cover3.jpg",
-    "mp3": "/public/music/mp3_3.mp3"
+    "cover": "/images/cover3.jpg",
+    "mp3": "/music/mp3_3.mp3"
   },
   {
     "id": 9,
     "name": "Someone Like You",
     "artiste": "Adele",
     "album": "21",
-    "cover": "./publi/images/cover4.jpg",
-    "mp3": "/public/music/mp3_4.mp3"
+    "cover": "/images/cover4.jpg",
+    "mp3": "/music/mp3_4.mp3"
   },
   {
     "id": 10,
     "name": "Believer",
     "artiste": "Imagine Dragons",
     "album": "Evolve",
-    "cover": "/public/images/cover5.jpg",
-    "mp3": "/public/music/mp3_5.mp3"
+    "cover": "/images/cover5.jpg",
+    "mp3": "/music/mp3_5.mp3"
   },
   {
     "id": 11,
     "name": "L'Amérique pleure",
     "artiste": "Les Cowboys Fringants",
     "album": "Les antipodes",
-    "cover": "/public/images/cover1.jpg",
-    "mp3": "/public/music/mp3_1.mp3"
+    "cover": "/images/cover1.jpg",
+    "mp3": "/music/mp3_1.mp3"
   },
   {
     "id": 12,
     "name": "Blinding Lights",
     "artiste": "The Weeknd",
     "album": "After Hours",
-    "cover": "/public/images/cover2.jpg",
-    "mp3": "/public/music/mp3_2.mp3"
+    "cover": "/images/cover2.jpg",
+    "mp3": "/music/mp3_2.mp3"
   },
   {
     "id": 12,
     "name": "Shape of You",
     "artiste": "Ed Sheeran",
     "album": "Divide",
-    "cover": "/public/images/cover3.jpg",
-    "mp3": "/public/music/mp3_3.mp3"
+    "cover": "/images/cover3.jpg",
+    "mp3": "/music/mp3_3.mp3"
   },
   {
     "id": 14,
     "name": "Someone Like You",
     "artiste": "Adele",
     "album": "21",
-    "cover": "/public/images/cover4.jpg",
-    "mp3": "/public/music/mp3_4.mp3"
+    "cover": "/images/cover4.jpg",
+    "mp3": "/music/mp3_4.mp3"
   },
   {
     "id": 15,
     "name": "Believer",
     "artiste": "Imagine Dragons",
     "album": "Evolve",
-    "cover": "/public/images/cover5.jpg",
-    "mp3": "/public/music/mp3_5.mp3"
+    "cover": "/images/cover5.jpg",
+    "mp3": "/music/mp3_5.mp3"
   }
 ]
