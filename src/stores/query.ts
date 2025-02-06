@@ -13,6 +13,7 @@ export const useQueueStore = defineStore('queue', {
     },
   },
   actions: {
+    // Joue une playlist à partir d'un titre choisi (firstTrack)
     playPlaylist(playlist: Track[], firstTrack: Track = playlist[0]) {
       playlist = playlist.filter((track) => track.id !== firstTrack.id);
 

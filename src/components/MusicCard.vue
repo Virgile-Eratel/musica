@@ -53,13 +53,13 @@ function handleClick() {
       v-else-if="variant === 'compact'"
       class="relative overflow-hidden cursor-pointer w-52 h-52 rounded-xl"
     >
-      <div class="relative">
+      <div class="relative w-52 h-52">
         <img
           :src="props.track.cover"
           alt="Album cover"
-          class="object-cover w-full h-auto rounded-xl"
+          class="object-cover w-full h-full rounded-xl"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black rounded-xl"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black"></div>
         <button class="absolute text-xl text-white top-2 right-2" @click="toggleLike">
           <i :class="isLiked ? 'bi bi-heart-fill text-red-500' : 'bi bi-heart text-gray-400'"></i>
         </button>
@@ -75,7 +75,11 @@ function handleClick() {
       class="cursor-pointer hover:bg-[#2a2a2a] bg-[#33373B] w-full rounded-lg p-1 items-center grid grid-cols-5"
     >
       <div class="w-12 h-12 col-span-1">
-        <img :src="props.track.cover" alt="Album cover" class="object-cover rounded-xl" />
+        <img
+          :src="props.track.cover"
+          alt="Album cover"
+          class="object-cover w-full h-full rounded-xl"
+        />
       </div>
       <h2 class="flex justify-center col-span-2 text-lg font-semibold truncate">
         {{ props.track.name }}

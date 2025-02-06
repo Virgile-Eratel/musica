@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import SearchModal from './SearchModal.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -18,6 +19,16 @@ const libraryIconClass = computed(() => (isActive('/library') ? 'text-[#FACD66]'
 const PlaylistIconClass = computed(() =>
   isActive('/playlists') ? 'text-[#FACD66]' : 'text-white',
 );
+
+const searchModalVisible = ref(false);
+
+function openSearchModal() {
+  searchModalVisible.value = true;
+}
+
+function closeSearchModal() {
+  searchModalVisible.value = false;
+}
 </script>
 
 <template>
@@ -48,14 +59,18 @@ const PlaylistIconClass = computed(() =>
           :class="['text-2xl cursor-pointer bi bi-boombox-fill', PlaylistIconClass]"
           @click="navigateTo('/playlists')"
         />
+        <!--         <i title="Search" class="text-2xl cursor-pointer bi bi-search" @click="openSearchModal" />
+ -->
       </div>
 
       <div
         class="flex flex-col items-center justify-center px-4 py-8 space-y-10 bg-black rounded-full"
       >
-        <i class="text-2xl text-white bi bi-person-fill" />
-        <i class="text-2xl text-white bi bi-box-arrow-right" />
+        <i class="text-2xl text-gray-400 bi bi-person-fill" />
+        <i class="text-2xl text-gray-400 bi bi-box-arrow-right" />
       </div>
+      <!--       <SearchModal :visible="searchModalVisible" @close="closeSearchModal" />
+ -->
     </div>
   </div>
 </template>

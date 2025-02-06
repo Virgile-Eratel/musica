@@ -33,7 +33,7 @@ function navigateTo(target: string) {
         <h2 class="text-lg font-semibold text-white truncate">{{ props.playlist.title }}</h2>
       </div>
     </div>
-    <div v-else-if="variant === 'line'" class="flex items-center w-full6 cursor-pointer">
+    <div v-else-if="variant === 'line'" class="flex items-end cursor-pointer w-full6">
       <div class="w-32 h-32">
         <img
           :src="props.playlist.cover"
@@ -43,6 +43,7 @@ function navigateTo(target: string) {
       </div>
       <div class="flex-1 pl-4">
         <h2 class="text-lg font-semibold text-white truncate">{{ props.playlist.title }}</h2>
+        <p class="text-gray-300">{{ props.playlist.tracksId.length }} musiques</p>
       </div>
     </div>
   </div>

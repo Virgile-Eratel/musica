@@ -14,16 +14,21 @@ const queueStore = useQueueStore();
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#141414] text-white w-full h-full">
+  <div class="min-h-screen bg-[#141414] text-white max-w-full">
     <div class="pt-8 pb-16 pl-12">
-      <div class="flex gap-6">
-        <div class="w-2/3 rounded-lg">
+      <div class="grid grid-cols-3 gap-6">
+        <div class="col-span-2 rounded-lg">
           <img src="/public/images/accueil1.png" alt="Accueil" class="object-fill rounded-xl" />
         </div>
-        <div class="w-full h-full space-y-3 overflow-y-auto">
-          <h1 class="text-xl font-semibold">Top charts</h1>
+        <div class="w-full h-full space-y-3 overflow-auto">
+          <h1 class="text-xl font-semibold">Top charts - Playlists</h1>
 
-          <PlaylistCard :playlist="playlists[0]" :variant="'line'" />
+          <PlaylistCard
+            v-for="playlist in playlists"
+            :key="playlist.id"
+            :playlist="playlist"
+            :variant="'line'"
+          />
         </div>
       </div>
       <h1 class="mt-6 mb-1 text-xl font-semibold">New releases.</h1>

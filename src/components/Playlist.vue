@@ -21,7 +21,7 @@ function playPlaylist() {
 </script>
 
 <template>
-  <div class="relative w-full h-full">
+  <div class="relative w-full h-[95vh] pt-[5vh] p-2">
     <div
       class="absolute inset-0 overflow-hidden bg-center bg-cover rounded-xl"
       :style="{ backgroundImage: `url(${props.cover})` }"
@@ -45,13 +45,14 @@ function playPlaylist() {
         </div>
         <button
           @click="playPlaylist"
-          class="p-4 bg-[#FACD66] rounded-full hover:bg-[#FACD90] focus:outline-none"
+          class="w-16 h-16 bg-[#FACD66] rounded-full hover:bg-[#FACD90] focus:outline-none"
         >
           <i class="text-3xl text-white bi bi-play-fill"></i>
         </button>
       </div>
-      <div class="w-full pt-10 space-y-4">
+      <div class="w-full pt-10 space-y-1">
         <MusicCard
+          @click="queueStore.playPlaylist(props.tracks, track)"
           v-for="(track, index) in props.tracks"
           :key="track.id"
           :track="track"
