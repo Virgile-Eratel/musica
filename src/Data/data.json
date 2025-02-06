@@ -41,82 +41,42 @@
   },
   {
     "id": 6,
-    "name": "L'Amérique pleure",
-    "artiste": "Les Cowboys Fringants",
-    "album": "Les antipodes",
-    "cover": "/images/cover1.jpg",
-    "mp3": "/music/mp3_1.mp3"
+    "name": "Le chant des partisans",
+    "artiste": "Les Stentors",
+    "album": "OSEF",
+    "cover": "/images/cover6.jpg",
+    "mp3": "/music/mp3_6.mp3"
   },
   {
     "id": 7,
-    "name": "Blinding Lights",
-    "artiste": "The Weeknd",
+    "name": "La Carioca",
+    "artiste": "Les Nuls",
     "album": "After Hours",
-    "cover": "/images/cover2.jpg",
-    "mp3": "/music/mp3_2.mp3"
+    "cover": "/images/cover7.jpeg",
+    "mp3": "/music/mp3_7.mp3"
   },
   {
     "id": 8,
-    "name": "Shape of You",
-    "artiste": "Ed Sheeran",
+    "name": "Señorita",
+    "artiste": "Camila Cabello",
     "album": "Divide",
-    "cover": "/images/cover3.jpg",
-    "mp3": "/music/mp3_3.mp3"
+    "cover": "/images/cover8.jpeg",
+    "mp3": "/music/mp3_8.mp3"
   },
   {
     "id": 9,
-    "name": "Someone Like You",
-    "artiste": "Adele",
+    "name": "Dernière danse",
+    "artiste": "Kyo",
     "album": "21",
-    "cover": "/images/cover4.jpg",
-    "mp3": "/music/mp3_4.mp3"
+    "cover": "/images/cover9.jpeg",
+    "mp3": "/music/mp3_9.mp3"
   },
   {
     "id": 10,
-    "name": "Believer",
-    "artiste": "Imagine Dragons",
+    "name": "I like the way you kiss me",
+    "artiste": "Artemas",
     "album": "Evolve",
-    "cover": "/images/cover5.jpg",
-    "mp3": "/music/mp3_5.mp3"
-  },
-  {
-    "id": 11,
-    "name": "L'Amérique pleure",
-    "artiste": "Les Cowboys Fringants",
-    "album": "Les antipodes",
-    "cover": "/images/cover1.jpg",
-    "mp3": "/music/mp3_1.mp3"
-  },
-  {
-    "id": 12,
-    "name": "Blinding Lights",
-    "artiste": "The Weeknd",
-    "album": "After Hours",
-    "cover": "/images/cover2.jpg",
-    "mp3": "/music/mp3_2.mp3"
-  },
-  {
-    "id": 12,
-    "name": "Shape of You",
-    "artiste": "Ed Sheeran",
-    "album": "Divide",
-    "cover": "/images/cover3.jpg",
-    "mp3": "/music/mp3_3.mp3"
-  },
-  {
-    "id": 14,
-    "name": "Someone Like You",
-    "artiste": "Adele",
-    "album": "21",
-    "cover": "/images/cover4.jpg",
-    "mp3": "/music/mp3_4.mp3"
-  },
-  {
-    "id": 15,
-    "name": "Believer",
-    "artiste": "Imagine Dragons",
-    "album": "Evolve",
-    "cover": "/images/cover5.jpg",
-    "mp3": "/music/mp3_5.mp3"
+    "cover": "/images/cover10.jpeg",
+    "mp3": "/music/mp3_10.mp3"
   }
 ]

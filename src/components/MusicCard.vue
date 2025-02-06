@@ -49,7 +49,10 @@ function handleClick() {
       <p class="text-sm text-gray-400">{{ props.track.artiste }}</p>
     </div>
 
-    <div v-else-if="variant === 'compact'" class="relative p-4 cursor-pointer w-52 h-52 rounded-xl">
+    <div
+      v-else-if="variant === 'compact'"
+      class="relative overflow-hidden cursor-pointer w-52 h-52 rounded-xl"
+    >
       <div class="relative">
         <img
           :src="props.track.cover"
@@ -61,8 +64,8 @@ function handleClick() {
           <i :class="isLiked ? 'bi bi-heart-fill text-red-500' : 'bi bi-heart text-gray-400'"></i>
         </button>
       </div>
-      <div class="absolute bottom-0 left-0 p-8">
-        <h2 class="mt-3 text-lg font-semibold truncate">{{ props.track.name }}</h2>
+      <div class="absolute bottom-0 left-0 p-4">
+        <h2 class="mt-3 text-lg font-semibold break-words">{{ props.track.name }}</h2>
         <p class="text-sm text-gray-400">{{ props.track.artiste }}</p>
       </div>
     </div>

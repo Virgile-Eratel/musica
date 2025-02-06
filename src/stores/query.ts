@@ -13,9 +13,13 @@ export const useQueueStore = defineStore('queue', {
     },
   },
   actions: {
-    playPlaylist(playlist: Track[]) {
+    playPlaylist(playlist: Track[], firstTrack: Track = playlist[0]) {
+      playlist = playlist.filter((track) => track.id !== firstTrack.id);
+
+      playlist.unshift(firstTrack);
+
       this.queue = playlist;
-      this.currentIndex = 0;
+      this.currentIndex = this.queue.findIndex((t) => t.id === firstTrack.id);
     },
     playNow(track: Track) {
       // musique en cours, return

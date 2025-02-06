@@ -32,10 +32,7 @@ const queueStore = useQueueStore();
       <h1 class="mt-6 mb-1 text-xl font-semibold">New releases.</h1>
       <div class="inline-flex w-full h-auto gap-6 overflow-x-auto overflow-y-hidden">
         <MusicCard
-          @click="
-            queueStore.playPlaylist(tracks.slice(0, 8));
-            queueStore.playNow(track);
-          "
+          @click="queueStore.playPlaylist(tracks.slice(0, 8), track)"
           v-for="(track, index) in tracks.slice(0, 8)"
           :key="track.id"
           :track="track"

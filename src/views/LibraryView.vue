@@ -71,10 +71,7 @@ function selectTab(tab: 'all' | 'liked') {
 
     <div class="flex flex-wrap w-full gap-6 px-8 pt-8 pb-16">
       <MusicCard
-        @click="
-          queueStore.playPlaylist(displayedTracks);
-          queueStore.playNow(track);
-        "
+        @click="queueStore.playPlaylist(displayedTracks, track)"
         v-for="track in displayedTracks"
         :key="track.id"
         :track="track"
